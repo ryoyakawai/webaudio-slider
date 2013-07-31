@@ -30,47 +30,47 @@ var slider = document.createElement('webaudio-slider');
 
 ## Attributes
 ### 'min'
-**description**: min value of the slider
+**description**: min value of the slider  
 **default**: `0`
 
 ### 'max'
-**description**: max value of the slider
+**description**: max value of the slider  
 **default**: `100`
 
 ### 'value'
-**description**: value of the slider
+**description**: value of the slider  
 **default**: `0`
 
 ### 'step'
-**description**: value change steps by moving mouse
+**description**: value change steps by moving mouse  
 **default**: `1`
 
 ### 'basewidth'
-**description**: width of slider's baseimage
+**description**: width of slider's baseimage  
 **default**: `0`
 
 ### 'baseheight'
-**description**: height of slider's baseimage
+**description**: height of slider's baseimage  
 **default**: `0`
 
 ### 'knobwidth'
-**description**: width of slider's knobimage
+**description**: width of slider's knobimage  
 **default**: `0`
 
 ### 'knobheight'
-**description**: height of slider's knobimage
+**description**: height of slider's knobimage  
 **default**: `0`
 
 ### 'ditchLength'
-**description**: lenght of slider's dithch
+**description**: lenght of slider's dithch  
 **default**: `0`
 
 ### 'basesrc'
-**description**: path to slider's base image resource (relative from where you are refering)
+**description**: path to slider's base image resource (relative from where you are refering)  
 **default**: `null`
 
 ### 'basesrc'
-**description**: path to slider's base image resource (relative from where you are refering)
+**description**: path to slider's base image resource (relative from where you are refering)  
 **default**: `null`
 
 ## Events
