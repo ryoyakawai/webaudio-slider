@@ -84,3 +84,8 @@ slider.addEventListener("change", function(){
 });
 ```
 
+
+## License
+
+The Apache License Version 2.0
+
