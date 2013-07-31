@@ -50,63 +50,62 @@
     </style>
   </template>
   <script>
-    Polymer('webaudio-slider', (function() {
-      var mousemove = function(e) {
+    Polymer('webaudio-slider', {
+      min:          0,
+      max:          100,
+      value:        0,
+      step:         1,
+      basewidth:    0,
+      baseheight:   0,
+      knobwidth:    0,
+      knobheight:   0,
+      ditchLength:  0,
+      basesrc:      null,
+      knobsrc:      null,
+      startPos:     0,
+      startVal:     0,
+      ready: function() {
+          this.$['base'].style.width = this.basewidth+'px';
+          this.$['base'].style.height = this.baseheight+'px';
+          this.$['base'].style.background = 'url('+this.basesrc+')';
+          this.$['knob'].style.width = this.knobwidth+'px';
+          this.$['knob'].style.height = this.knobheight+'px';
+          this.$['knob'].style.background = 'url('+this.knobsrc+')';
+          this.$['knob'].style.left = this.basewidth/2 - this.knobwidth/2 + "px";
+          this.update(this.value);
+      },
+      mousedown:  function(e) {
+          this.$['value-tip'].style.opacity = 1;
+          this.startPos = e.pageY;
+          this.startVal = this.value;
+          this.boundMousemove = this.mousemove.bind(this);
+          this.boundCancel = this.cancel.bind(this);
+          window.addEventListener('mousemove', this.boundMousemove, true);
+          window.addEventListener('mouseup', this.boundCancel, true);
+          e.preventDefault();
+      },
+      mousemove: function(e) {
+          console.log(this);
           var offset = (this.startPos - e.pageY) * (this.max/this.ditchLength) || 0;
+          console.log("MOUSEMOVE", this.startPos, e.pageY, e);
           var value = ~~(this.startVal + this.step * offset);
-          update.bind(this)(value);
-      };
-      
-      var cancel = function(e) {
+          this.update(value);
+      },      
+     cancel: function(e) {
+          console.log("CANCEL", e);
           this.startPos = null;
           this.$['value-tip'].style.opacity = 0;
           window.removeEventListener('mousemove', this.boundMousemove, true);
-          window.removeEventListener('mouseup', this.boudCancel, true);
-      };
+          window.removeEventListener('mouseup', this.boundCancel, true);
+      },
       
-      var update = function(value) {
+      update: function(value) {
           this.value = value < this.min ? this.min : value > this.max ? this.max : value;
           var range = Math.abs(this.min) + Math.abs(this.max);
           var value = this.ditchLength+(this.baseheight-this.ditchLength)/2 - this.value * (this.ditchLength/this.max);
           this.$['knob'].style.top = value-this.knobheight/2 + "px";
           this.fire('change');
-      };
-      
-      return {
-          ready: function() {
-              this.$['base'].style.width = this.basewidth+'px';
-              this.$['base'].style.height = this.baseheight+'px';
-              this.$['base'].style.background = 'url('+this.basesrc+')';
-              this.$['knob'].style.width = this.knobwidth+'px';
-              this.$['knob'].style.height = this.knobheight+'px';
-              this.$['knob'].style.background = 'url('+this.knobsrc+')';
-              this.$['knob'].style.left = this.basewidth/2 - this.knobwidth/2 + "px";
-              update.bind(this)(this.value);
-          },
-          min:          0,
-          max:          100,
-          value:        0,
-          step:         1,
-          basewidth:    0,
-          baseheight:   0,
-          knobwidth:    0,
-          knobheight:   0,
-          ditchLength:  0,
-          basesrc:      null,
-          knobsrc:      null,
-          startPos:     null,
-          startVal:     0,
-          mousedown:  function(e) {
-              this.$['value-tip'].style.opacity = 1;
-              this.startPos = e.pageY;
-              this.startVal = this.value;
-              this.boundMousemove = mousemove.bind(this);
-              this.boundCancel = cancel.bind(this);
-              window.addEventListener('mousemove', this.boundMousemove, true);
-              window.addEventListener('mouseup', this.boundCancel, true);
-              e.preventDefault();
-          }
-      };
-  })());
+      }
+  });
   </script>
 </polymer-element>

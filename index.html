@@ -18,13 +18,11 @@
     <p>These knobs are made using <a href="http://polymer-project.org/" target="_blank">Polymer</a> and <a href="http://www.w3.org/TR/components-intro/" target="_blank">WebComponents</a>. Checkout <a href="http://github.com/ryoyakawai/webaudio-slider" target="_blank">source code</a>.</p>
 
     <h2>Sample: Size Variation</h2>
-    <div class="fader"><webaudio-slider id="hoge01" class="hoge01" basesrc="images/fader-base01.jpg" knobsrc="images/fader-knob01.jpg" value="20" min="0" max="100" step="1" basewidth="104" baseheight="404" knobwidth="45" knobheight="86" ditchLength="290"></webaudio-slider>
-</div>
+    <div class="fader"><webaudio-slider id="hoge01" class="hoge01" basesrc="images/fader-base01.jpg" knobsrc="images/fader-knob01.jpg" value="20" min="0" max="100" step="1" basewidth="104" baseheight="404" knobwidth="45" knobheight="86" ditchLength="290"></webaudio-slider></div>
     <div class="fader"><webaudio-slider id="hoge02" class="hoge02" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="40" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
     <div class="fader"><webaudio-slider id="hoge03" class="hoge03" basesrc="images/fader-base02.jpg" knobsrc="images/fader-knob02.jpg" value="0" min="0" max="100" step="1" basewidth="43" baseheight="124" knobwidth="20" knobheight="30" ditchLength="80"></webaudio-slider></div>
-    <div class="fader"><webaudio-slider id="hoge02" class="hoge02" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="40" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
-    <div class="fader"><webaudio-slider id="hoge01" class="hoge01" basesrc="images/fader-base01.jpg" knobsrc="images/fader-knob01.jpg" value="20" min="0" max="100" step="1" basewidth="104" baseheight="404" knobwidth="45" knobheight="86" ditchLength="290"></webaudio-slider>
-</div>
+    <div class="fader"><webaudio-slider id="hoge04" class="hoge04" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="40" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+    <div class="fader"><webaudio-slider id="hoge05" class="hoge05" basesrc="images/fader-base01.jpg" knobsrc="images/fader-knob01.jpg" value="20" min="0" max="100" step="1" basewidth="104" baseheight="404" knobwidth="45" knobheight="86" ditchLength="290"></webaudio-slider></div>
 
 
     <br class="clear">
@@ -53,6 +51,12 @@
     });
     document.getElementById("hoge03").addEventListener("change", function(event){
         console.log("hoge03", this.value);
+    });
+    document.getElementById("hoge04").addEventListener("change", function(event){
+        console.log("hoge04", this.value);
+    });
+    document.getElementById("hoge05").addEventListener("change", function(event){
+        console.log("hoge05", this.value);
     });
 
     document.getElementById("hoge101").addEventListener("change", function(event){
