@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>[Polymer] WebAudio Slider(Fader) Examples</title>
+    <script src="js/polymer.min.js"></script>
+    <link rel="import" href="webcomponents/slider.html">
+    <style tyle="text/css">
+    body{ background-image: url(images/body-bg.jpg); margin:10px; font-family:Helvetica; font-size:0.85em;}
+    .fader{ float:left; margin: 10px; }
+    .console{ background-color: #c0c0c0; border:1px solid #909090; padding: 10px; width:580px; height:300px; }
+    .fader1{ float:left; margin: 3px; }
+    .clear{ clear:both; }
+    </style>
+  </head>
+  <body>
+    <h1>Polymer Web Audio Slider(Fader) Elements</h1>
+    <p>These knobs are made using <a href="http://polymer-project.org/" target="_blank">Polymer</a> and <a href="http://www.w3.org/TR/components-intro/" target="_blank">WebComponents</a>. Checkout <a href="http://github.com/ryoyakawai/webaudio-slider" target="_blank">source code</a>.</p>
+
+    <h2>Sample: Size Variation</h2>
+    <div class="fader"><webaudio-slider id="hoge01" class="hoge01" basesrc="images/fader-base01.jpg" knobsrc="images/fader-knob01.jpg" value="20" min="0" max="100" step="1" basewidth="104" baseheight="404" knobwidth="45" knobheight="86" ditchLength="290"></webaudio-slider>
+</div>
+    <div class="fader"><webaudio-slider id="hoge02" class="hoge02" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="40" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+    <div class="fader"><webaudio-slider id="hoge03" class="hoge03" basesrc="images/fader-base02.jpg" knobsrc="images/fader-knob02.jpg" value="0" min="0" max="100" step="1" basewidth="43" baseheight="124" knobwidth="20" knobheight="30" ditchLength="80"></webaudio-slider></div>
+
+    <br class="clear">
+    <br>
+
+    <h2>Sample: Console Style</h2>
+    <div class="console">
+      <div class="fader1"><webaudio-slider id="hoge101" class="hoge101" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="90" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+      <div class="fader1"><webaudio-slider id="hoge102" class="hoge102" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="60" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+      <div class="fader1"><webaudio-slider id="hoge103" class="hoge103" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="30" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+      <div class="fader1"><webaudio-slider id="hoge104" class="hoge104" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="00" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+      <div class="fader1"><webaudio-slider id="hoge105" class="hoge105" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="30" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+      <div class="fader1"><webaudio-slider id="hoge106" class="hoge106" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="60" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+      <div class="fader1"><webaudio-slider id="hoge107" class="hoge107" basesrc="images/fader-base03.jpg" knobsrc="images/fader-knob03.jpg" value="90" min="0" max="100" step="1" basewidth="76" baseheight="300" knobwidth="35" knobheight="50" ditchLength="230"></webaudio-slider></div>
+    </div>
+
+    <script type="text/javascript">
+    document.getElementById("hoge01").addEventListener("change", function(event){
+        console.log("hoge01", this.value);
+    });
+    document.getElementById("hoge02").addEventListener("change", function(event){
+        console.log("hoge02", this.value);
+    });
+    document.getElementById("hoge03").addEventListener("change", function(event){
+        console.log("hoge03", this.value);
+    });
+
+    document.getElementById("hoge101").addEventListener("change", function(event){
+        console.log("hoge101", this.value);
+    });
+    document.getElementById("hoge102").addEventListener("change", function(event){
+        console.log("hoge102", this.value);
+    });
+    document.getElementById("hoge103").addEventListener("change", function(event){
+        console.log("hoge103", this.value);
+    });
+    document.getElementById("hoge104").addEventListener("change", function(event){
+        console.log("hoge104", this.value);
+    });
+    document.getElementById("hoge105").addEventListener("change", function(event){
+        console.log("hoge105", this.value);
+    });
+    document.getElementById("hoge106").addEventListener("change", function(event){
+        console.log("hoge106", this.value);
+    });
+    document.getElementById("hoge107").addEventListener("change", function(event){
+        console.log("hoge107", this.value);
+    });
+    </script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31901806-1']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+  </body>
+</html>
