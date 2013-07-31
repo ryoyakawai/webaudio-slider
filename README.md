@@ -62,7 +62,7 @@ var slider = document.createElement('webaudio-slider');
 **default**: `0`
 
 ### 'ditchLength'
-**description**: lenght of slider's dithch  
+**description**: lenght of slider's dithch. Please adjust this value when the knob is pushed out from baseimage.
 **default**: `0`
 
 ### 'basesrc'
