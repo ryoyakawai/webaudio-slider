@@ -82,5 +82,5 @@ var slider = document.getElementsByTagName('[id name of your slider element]');
 slider.addEventListener("change", function(){
   console.log(this.value);
 });
-          ```
+```
 
